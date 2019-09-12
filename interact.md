@@ -80,9 +80,13 @@ performed as when the target program (or socket connection) has
 finished.
 
 `settings`
-==========
+----------
 
 This gives the initial settings for variables which can be substituted
 into responses.  Each value given in the YAML file is processed using
 Python's `eval` function.
 
+`imports`
+---------
+
+A list of modules to import, for use in the action strings.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import importlib
 import re
 import shlex
 import subprocess
@@ -187,6 +188,9 @@ def main():
     variables = raw_script.get('settings', {})
     for n, elt in enumerate(args.rest):
         variables[str(n)] = elt
+    if 'imports' in raw_script:
+        for module_name in raw_script['imports']:
+            importlib.import_module(module_name)
     interactions = { re.compile(pattern)
                      if isinstance(pattern, str)
                      else pattern: action
