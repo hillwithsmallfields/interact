@@ -1,0 +1,8 @@
+#!/home/jcgs/experiments/interact/interact.py --verbose
+
+target:
+  run: ./dummy.py
+
+responses:
+  "GROUP: .+odc-user": send("odc-user")
+  
